@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Politwitical</title>
+	<!-- favicon found online -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+</head>
+<body>
+
+	<div class = "loading-view">
+		<div class = "heading">
+			<h1 style = "font-size: 12vh; margin:0">POLITWITICAL</h1>
+			<p style = "font-size: 3vh; margin:0">Real-time political twitter data.</p>
+			<h2 style = "font-size: 3.5vh; margin:1vh">What are people tweeting about right now?</h2>
+		</div>
+		<h1 id = "fetching" style = "font-size:4vh">Fetching data...</h1>
+	</div>
+
+
+
+	<div id = "disclaimer-sign">!</div>
+	<div id = "disclaimer-text">
+		<h1>DISCLAIMER:</h1>
+		<p>Some irrelevant/random words might appear on the screen due to spam tweets and/or because those words have not been added to the stopwords list. This will be more common during inactivity periods on Twitter (e.g. 12am EST to 7am EST). If this occurs, you can refresh the webpage. The webpage will automatically refresh every 15 minutes, however. Additionally,
+		because data is being streamed live from Twitter, during inactivty periods the webpage will be relatively empty.</p>
+	</div>
+
+	<div id = "help-sign">?</div>
+	<div id = "help-text">
+		<p>Hover over the words to see how people feel about the topic. Clicking on the word will take you to a twitter search.</p>
+	</div>
+
+	<div id = "error">
+		There was an error. Restarting stream...
+	</div>
+
+	<a target="_blank" href="https://github.com/kaarora123/politwitical">
+		<img alt="github link" src="{{ url_for('static', filename='github.png') }}" width="30" height="30">
+	</a>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/stream.js') }}"></script>
+	
+</body>
+</html>
