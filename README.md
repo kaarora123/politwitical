@@ -1,7 +1,8 @@
 # Politwitical
 
-Politwitical is a simple web app created using Flask, tweepy, and textblob that displays the most tweeted political words/hashtags at the current moment in time.
-When an HTTP request is made, AJAX requests are made every 30 seconds to get data from Flask. Flask collects tweets for 30 seconds using Twitter's streaming API 
+Politwitical is a simple web app created using Flask, tweepy, and textblob that displays the most tweeted political words/hashtags at the current moment in time. 
+
+AJAX requests are made every 30 seconds to get data from Flask. Flask collects tweets for 30 seconds using Twitter's streaming API 
 and filters the tweets based on user (politicians, political twitter accounts, news accounts, etc). The tweets are then processed, their polarity is determined using textblob, 
 and the frequencies of all the important words are calculated. All this data is stored in a python dictionary and translated into a JSON object which is sent to Javascript using 
 Flask Response. Javascript then displays the words on the screen and creates a pie chart (using Chart.js) for each word that presents the the number of positive, neutral, and negative
