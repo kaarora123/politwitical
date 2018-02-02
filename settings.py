@@ -72,6 +72,7 @@ STOPWORDS = ["a","able","about","above","abroad","absolutely","abt","according",
     "when","whenever","where","wheres","which","while","white","who","whole","whom","whos","why","wife","will","willing","with","within","without","won",
     "wonder","wont","word","work", "working", "world","would","wouldnt","write","wrong","x","y","yeah","year","years","yep","yes","yet","you","youll","young",
     "your", "youre","yours","yourself","yourselves","youve","z","zero","zoom", "bts", "btstwt", "suddenly", "anyone", "friend", "friendly", "rest", "middle",
-    "pts", "doesn", "wouldn", "btg", "ehh", "ca", "played", "rest", "feast", "ko", "cheat", "cheated", "shaku", "special"] 
+    "pts", "doesn", "wouldn", "btg", "ehh", "ca", "played", "rest", "feast", "ko", "cheat", "cheated", "shaku", "special", "shoes", "chess", "red", "act", "acting",
+    "kick"] 
 
 STOPWORDS_SET = set(STOPWORDS)
