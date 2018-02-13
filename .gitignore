@@ -32,16 +32,6 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
 
 # Translations
 *.mo
@@ -80,3 +70,6 @@ venv.bak/
 
 # twitter api auth
 private.py
+
+.DS_Store
+
