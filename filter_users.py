@@ -16,7 +16,7 @@ MIN_FOLLOWER_COUNT = 1000
 buzzwords = ["clinton", "obama", "trump", "sanders", "resist", "persist", "maga", "advocate", "democrat", 
              "republican", "dem", "liberal", "conservative", "dnc", "gop", "politic", "military", "democracy"
              "wall", "activist", "delegate", "assembly", "city council", "attorney", "russia", "cnn", "fox", 
-             "activism"]
+             "activism", "potus"]
 
 
 def add_user(status):

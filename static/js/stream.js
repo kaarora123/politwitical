@@ -1,7 +1,6 @@
 $(document).ready(function() {
-// on page load, clear the onscreen array and add the loading class to the body to display loading page
-  onscreen = [];
-  $('body').addClass("loading");
+// on page load, add the loading class to the body to display loading page
+  $("body").addClass("loading");
 
 
 //refreshes the page every 15 minutes to clear the screen (just in case of spam tweets or words get too big)
@@ -18,7 +17,7 @@ function getStream() {
 
 	$.ajax({
 		type: "GET",
-		url: '/stream',
+		url: "/stream",
 		success: function(data) {
 			deferredData.resolve(data);
 		},
@@ -46,7 +45,7 @@ var dataDict;
 function sortData() {
 	var dataDeferred = getStream();
 	$.when( dataDeferred ).done( function(data) {
-		JSONdict = JSON.stringify(data);
+		var JSONdict = JSON.stringify(data);
 		dataDict = JSON.parse(JSONdict);
 		if (Object.keys(dataDict).length >= 1) {
 			// removes the loading class from the body after we get our first non-empty data object
@@ -67,15 +66,6 @@ function sortData() {
 
 	});
 }
-
-
-sortData();
-
-//data is fetched and sorted every 30 seconds
-var timer = setInterval(function() {
-	sortData();
-}, 30000);
-
 
 
 //stores the words on the screen
@@ -111,7 +101,7 @@ function processData() {
 			elem.style.position = "absolute";
 			setPosition(elem);
 			elem.style.display = "none";
-			document.body.appendChild(elem)
+			document.body.appendChild(elem);
 
 			createChart(elem);
 
@@ -153,7 +143,7 @@ function addEventHandlers(elem) {
 
 
 		$("#"+elem.id+"Chart").on("click", function() {
-			window.open("https://twitter.com/search?q=" + this.id.substr(0, this.id.length - 5) + "&src=typd")
+			window.open("https://twitter.com/search?q=" + this.id.substr(0, this.id.length - 5) + "&src=typd");
 
 		});
 
@@ -167,7 +157,7 @@ function updateChart(chart, data) {
 function createChart(elem) {
 	var canvasDiv = document.createElement("div");
 	canvasDiv.id = elem.id + "Chart";
-	canvasDiv.className = "chart"
+	canvasDiv.className = "chart";
 	canvasDiv.style.position = "absolute";
 	canvasDiv.style.left = parseFloat(window.getComputedStyle(elem).left);
 	canvasDiv.style.top = parseFloat(window.getComputedStyle(elem).top);
@@ -179,7 +169,7 @@ function createChart(elem) {
 	var ctx = $("#"+canvasDiv.id + " canvas");
 
 	var pieChart = new Chart(ctx, {
-		type: 'pie',
+		type: "pie",
 		data: {
 			labels: ["positive tweets", "neutral tweets", "negative tweets"],
 			datasets: [{
@@ -239,17 +229,17 @@ function checkCollision(elem) {
 					$("#"+otherElem.id+"Chart").remove();
 					onscreen.splice(i, 1);
 
-					delete dataDict[otherElem.id]
+					delete dataDict[otherElem.id];
 				} else {
 					$("#"+elem.id).fadeOut(300, function(){ $(this).remove(); });
 					$("#"+elem.id+"Chart").remove();
 
 					var index = onscreen.indexOf(elem.id);
 					if (index > -1) {
-						onscreen.splice(index, 1)
+						onscreen.splice(index, 1);
 					}
 
-					delete dataDict[elem.id]
+					delete dataDict[elem.id];
 				}
 			}
 
@@ -279,7 +269,7 @@ function setPosition(elem) {
 			top: randTop,
 			right: randLeft + 250, //300
 			bottom: randTop + 150 //200
-		}
+		};
 
 		//just in case the loop doesn't exit, we count the number of iterations
 		//if looped under 5 times, use larger padding to separate elements
@@ -338,3 +328,11 @@ function isOverlapping(elem, position, paddingV, paddingH) {
 	return isOverlapping;
 
 }
+
+
+sortData();
+
+//data is fetched and sorted every 30 seconds
+var timer = setInterval(function() {
+	sortData();
+}, 30000);

@@ -73,16 +73,16 @@ class StreamListener(tweepy.StreamListener):
         clean_tweet = slang.sub(lambda x: settings.SLANG_DICT[x.group()], clean_tweet)
         ####
 
-        polarity = self.get_polarity(clean_tweet)
+        polarity = StreamListener.get_polarity(clean_tweet)
         
         #remove stopwords(using the custom stopwords list in settings.py) to get most important words
         important_words = " ".join([word for word in clean_tweet.split() if word not in settings.STOPWORDS_SET])
         
         #add the processed tweet into the tweets list
         self.tweets[important_words] = polarity
-        
-        
-    def get_polarity(self, tweet):
+    
+    @staticmethod      
+    def get_polarity(tweet):
         """
         Determines the polarity of the tweet using TextBlob.
         
@@ -218,10 +218,8 @@ def event_stream():
         return sortData.get_most_common_words()
     except ProtocolError:
         print("There was an error. Restarting stream...")
-        pass
     except ConnectionError:
         print("There was an error. Restarting stream...") 
-        pass
 
 
 

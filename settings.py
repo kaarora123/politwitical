@@ -2,7 +2,7 @@
 #needed for textblob analysis
 SLANG_DICT = {"cant": "can not", "im": "i am", "arent": "are not", "couldnt": "could not", "hasnt": "has not", 
               "havent": "have not", "didnt": "did not", "dont": "do not", "doesnt": "does not", "aint": "am not", 
-              "id": "i would", "ill": "i will", "hadnt": "had not", "ive": "i have", "isnt": "is not", "whyd": "why did",
+              "id": "i would", "ill": "i will", "hadnt": "had not", "isnt": "is not", "whyd": "why did",
               "wasnt": "was not", "wont": "will not", "werent":"were not", "whats":"what is", "wouldnt":"would not", 
               "youve":"you have", "thats":"that is", "ive": "i have", "wtf": "what the fuck", "u": "you", "r":"are",
               "wth":"what the hell", "ya":"yeah", "k":"ok", "lol":"laugh out loud", "lmao": "laughing my ass off", 
@@ -73,6 +73,6 @@ STOPWORDS = ["a","able","about","above","abroad","absolutely","abt","according",
     "wonder","wont","word","work", "working", "world","would","wouldnt","write","wrong","x","y","yeah","year","years","yep","yes","yet","you","youll","young",
     "your", "youre","yours","yourself","yourselves","youve","z","zero","zoom", "bts", "btstwt", "suddenly", "anyone", "friend", "friendly", "rest", "middle",
     "pts", "doesn", "wouldn", "btg", "ehh", "ca", "played", "rest", "feast", "ko", "cheat", "cheated", "shaku", "special", "shoes", "chess", "red", "act", "acting",
-    "kick"] 
+    "kick", "swamy", "bot", "given", "group", "daughter", "ago", "gummy", "sos", "tired"] 
 
 STOPWORDS_SET = set(STOPWORDS)
