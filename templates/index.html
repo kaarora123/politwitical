@@ -4,6 +4,10 @@
 	<!-- favicon found online -->
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/stream.js') }}"></script>
 </head>
 <body>
 
@@ -27,7 +31,7 @@
 
 	<div id = "help-sign">?</div>
 	<div id = "help-text">
-		<p>Hover over the words to see how people feel about the topic. Clicking on the word will take you to a twitter search.</p>
+		<p>The bigger the word, the more tweets there are about it. Hover over the words to see how people feel about the topic. Clicking on the word will take you to a Twitter search.</p>
 	</div>
 
 	<div id = "error">
@@ -37,10 +41,6 @@
 	<a target="_blank" href="https://github.com/kaarora123/politwitical">
 		<img alt="github link" src="{{ url_for('static', filename='github.png') }}" width="30" height="30">
 	</a>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
-	<script type="text/javascript" src="{{ url_for('static',filename='js/stream.js') }}"></script>
 	
 </body>
 </html>
