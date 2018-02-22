@@ -318,7 +318,7 @@ function isOverlapping(elem, position, paddingV, paddingH) {
 			} else if (elemRight < otherElemLeft - paddingH) {
 				isOverlapping = false;
 			} else if (elemLeft > otherElemRight + paddingH) {
-				isOverlapping = false
+				isOverlapping = false;
 			} else {
 				return true;
 			}

@@ -8,10 +8,6 @@
 	z-index:100;
 	width:100vw;
 	height:100vh;
-	background-image: url("http://gifimage.net/wp-content/uploads/2017/08/twitter-gif-9.gif");	
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size:50vh;
 	overflow-x: scroll;
     white-space: nowrap;
 
@@ -20,11 +16,18 @@
 .loading-view #fetching {
 	font-family: "Concert One", sans-serif; 
 	position:absolute;
-	float:left;
-	top: 34%;
 	left:50%;
 	transform: translate(-50%, -50%);
 
+}
+
+.loading-view img {
+	width:25vw;
+	position:absolute;
+	left:50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	padding-top:20%;
 }
 
 .heading{ 
