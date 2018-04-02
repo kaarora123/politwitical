@@ -26,7 +26,7 @@ function getStream() {
 			if (textStatus === "error" || textStatus === "parseerror") {
 				if ($("body").hasClass("loading")) {
 					$("#fetching").text("This is taking longer than usual...");
-					$("#fetching").css({fontSize: "3.5vh"});
+					$("#fetching").css({fontSize: "2.5vw"});
 				} else {
 					$("body").addClass("error");
 				}
@@ -311,17 +311,18 @@ function isOverlapping(elem, position, paddingV, paddingH) {
 			var otherElemRight = otherElemLeft + $("#"+otherElem.id).width();
 
 
-			if (elemBottom < otherElemTop - paddingV) {
+			if(elemBottom < otherElemTop - paddingV ||
+			   elemTop > otherElemBottom + paddingV ||
+			   elemRight < otherElemLeft - paddingH ||
+			   elemLeft > otherElemRight + paddingH) {
+
 				isOverlapping = false;
-			} else if (elemTop > otherElemBottom + paddingV) {
-				isOverlapping = false;
-			} else if (elemRight < otherElemLeft - paddingH) {
-				isOverlapping = false;
-			} else if (elemLeft > otherElemRight + paddingH) {
-				isOverlapping = false;
+			
 			} else {
+
 				return true;
 			}
+
 		}
 	}
 
